@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- form.html -->
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consulta PJe TRF1 - 2ª Instância</title>
+  <link href="../styles/style.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <form action="/consulta_processos" method="post">
+      <h2>Consulta automatizada de Processos - TRF1 (2ª Instância)</h2>
+      <label for="cpf">CPF:</label>
+      <input type="text" id="cpf" name="cpf" required />
+      <input type="submit" class="button" value="Pesquisar" />
+    </form>
+    <!-- Exibição da mensagem de retorno -->
+    {% if mensagem %}
+    <p>{{ mensagem }}</p>
+    {% endif %}
+    <p>Copyright@Bid2U-2023</p>
+  </body>
+</html>

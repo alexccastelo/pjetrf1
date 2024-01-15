@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resultado da Pesquisa</title>
+    <style>
+        .linha-separadora {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Pesquisa Concluída para o CPF: {{ cpf }}</h2>
+    <p>Foram encontrados {{ quantidade_processos }} processo(s)</p>
+    <p>Tempo de Pesquisa: {{ total_time }} segundos</p>
+<p>Planilha Excel completa - <a href="../processos.csv">Download</a>&nbsp;</p>
+<div class="linha-separadora"></div>
+
+    <h3>Número Processo | Data Distribuição</h3>
+    {% for row in dados %}
+    <p>{{ row[0] }} | {{ row[1] }} | {{ row[2] }}</p> <!-- Ajuste os índices de acordo com a estrutura do seu CSV -->
+    {% endfor %}
+
+    <div class="linha-separadora"></div>
+    <a href="{{ url_for('index') }}">Voltar</a>
+    <p>Copyright @ 2023 - 2024 Bid2U Softhouse</p>
+</body>
+
+</html>
